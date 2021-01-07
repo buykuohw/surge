@@ -8,21 +8,15 @@
 
 [Script]
 # > 每日一句+ 蚂蚁森林收能量
-每日一句+蚂蚁森林收能量 = script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/yichahucha/cron_daily.js,type=cron,cronexp=0 30 7 * * *
+每日一句+蚂蚁森林收能量 = script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/yichahucha/cron_daily.js,type=cron,cronexp=0 30 8 * * *
 
 # > 疫情日报 (By Peng-YM)
-#疫情日报 = script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/nCov.js,type=cron,cronexp=0 0 8 * * *
-
-# > 疫情辟谣 (By @Dachaw)
-#疫情辟谣 = script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/nCoVrumors.js,type=cron,cronexp=0 0 8 * * *
+疫情日报 = script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/nCov.js,type=cron,cronexp=0 0 8 * * *
 
 # > 电视节目预告 (By @Macsuny)
 # var c = “cctv1”
 # 常用卫视代码北京: btv1 | 湖南: hunan | 浙江: zhejiang|河南: henan| 江苏: jiangsu|广东: guangdong
 电视节目预告 = type=cron,cronexp=0 0 8 * * *,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/tvpreview.js,script-update-interval=0
-
-# > 12306余票及列车时刻表查询(By @Macsuny)
-12306 = type=cron,cronexp=0 0 8 * * *,script-path=https://raw.githubusercontent.com/buykuohw/surge/main/task/12306.js
 
 # > 微博通知  (By @zZPiglet)
 # 进入 https://m.weibo.cn 并登陆，获取cookie后进入boxjs配置
@@ -92,3 +86,7 @@
 # > qq会员成长值签到 (By @lowking0415)
 # 手机qq进入左侧会员，滑动即可
 #qq会员签到 = type=cron,cronexp=0 0 0,1 * * ?,wake-system=1,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/QQVip/qqVipCheckIn.js,script-update-interval=0
+
+
+[MITM]
+hostname = %APPEND% *.bilibili.com
