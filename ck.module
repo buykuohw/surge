@@ -9,9 +9,6 @@ http-request ^https:\/\/frodo\.douban\.com\/api\/v\d\/calendar\/today script-pat
 # > 滴滴出行 (By @zZPiglet)
 http-request ^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi.js
 
-# > 招行信用卡(公众号) (By @iNotification)
-http-request ^https://weclub\.ccc\.cmbchina.com/SCRMCustomActivityFront/checkin/request/get-home-data\.json\?activityCode=checkin script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/cmbchina.js
-
 # > 饿了么   (By @syzzzf)
 http-request ^https:\/\/h5\.ele\.me\/restapi\/eus\/v\d\/current_user$ script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/elem/elemGetCookies.js
 
@@ -23,4 +20,4 @@ http-request ^https:\/\/m\.weibo\.cn\/feed\/ script-path=https://raw.githubuserc
 
 
 [MITM]
-hostname = %APPEND% frodo.douban.com, as.xiaojukeji.com, weclub.ccc.cmbchina.com, h5.ele.me, *.bilibili.com, m.weibo.cn
+hostname = %APPEND% frodo.douban.com, as.xiaojukeji.com, h5.ele.me, *.bilibili.com, m.weibo.cn
