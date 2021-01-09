@@ -12,20 +12,6 @@ force-http-engine-hosts = %APPEND% vali.cp31.ott.cibntv.net
 # > 京东  去启动广告
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT-TINYGIF
 
-# > 哔哩哔哩 去广告 
-URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJECT
-URL-REGEX,https://api.bilibili.com/x/v2/dm/ad,REJECT
-
-# > 知乎 去广告
-//SOME MCN INFO MAY BE USEFUL
-//URL-REGEX,https://www.zhihu.com/api/v4/mcn/,REJECT
-DOMAIN,appcloud2.zhihu.com,REJECT
-//DO NOT GET CDN-BASED IP
-DOMAIN,118.89.204.198,REJECT
-USER-AGENT,AVOS*,REJECT
-URL-REGEX,https://api.zhihu.com/(ad|drama|fringe|commercial|market/popover|search/(top|preset|tab)|.*featured-comment-ad),REJECT
-AND,((USER-AGENT,ZhihuHybrid*), (URL-REGEX,.*recommend)),REJECT
-
 # > 人人视频 去广告
 AND,((USER-AGENT,PUClient*), (NOT,((DOMAIN-SUFFIX,rr.tv)))),REJECT
 URL-REGEX,^https?:\/\/api\.rr\.tv\/(?:ad\/getAll$|storage/business/rootName/app/homePage),REJECT
@@ -81,21 +67,6 @@ YouTube.js = script-path=https://Choler.github.io/Surge/Script/YouTube.js,type=h
 # > 人人视频 去广告
 rrsp_video = type=http-response,requires-body=true,pattern=^https?:\/\/api\.rr\.tv\/watch\/v\d\/get_movie_info,script-path=https://Choler.github.io/Surge/Script/rrsp.js
 rrsp_banner = type=http-response,requires-body=true,pattern=^https?:\/\/api\.rr\.tv\/v\dplus\/index\/channel$,script-path=https://Choler.github.io/Surge/Script/rrsp.js
-
-# > onewayticket255
-# > 知乎 去广告
-zhihu people = type=http-response,requires-body=1,max-size=0,pattern=https://api.zhihu.com/people/,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20people.js
-zhihu feed = type=http-response,requires-body=1,max-size=0,pattern=https://api.zhihu.com/moments/recommend,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20feed.js
-zhihu recommend = type=http-response,requires-body=1,max-size=0,pattern=https://api.zhihu.com/topstory/recommend,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20recommend.js
-zhihu answer = type=http-response,requires-body=1,max-size=0,pattern=https://api.zhihu.com/v4/questions,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20answer.js
-# > 哔哩哔哩 精简&去广告
-//收藏排行 = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/space\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20space.js
-首页 tab = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/resource/show/tab\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20tab.js
-bilibili feed = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/feed/index\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20feed.js
-个人中心 = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/account/mine\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20account.js
-bilibili view = type=http-response,requires-body=1,max-size=0,pattern=https://app.bilibili.com/x/v2/view\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20view%20relate.js
-bilibili reply = type=http-response,requires-body=1,max-size=0,pattern=https://api.bilibili.com/x/v2/reply/main\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20reply.js
-bilibili live = type=http-response,requires-body=1,max-size=0,pattern=https://api.live.bilibili.com/xlive/app-room/v1/index/getInfoByRoom\?access_key,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20live.js
 
 # > NobyDa
 # > 小小影视  去广告(By Eric)
@@ -157,4 +128,4 @@ rrtv.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.c
 Greasy Fork=type=http-response, pattern=^https:\/\/(greasyfork|openuserjs)\.org\/.*\/.*\.user\.js, script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GreasyFork/greasy-fork.js, requires-body=true
 
 [MITM]
-hostname = %APPEND% greasyfork.org, openuserjs.org, trade-acs.m.taobao.com, api.m.jd.com, ios.prod.ftl.netflix.com, vipapi.jxedt.com, api.interpreter.caiyunai.com, book.haitunwallet.com, api.rr.tv, api.diyidan.net, api.flexibits.com, note.youdao.com, api.shimo.im, *.bjxkhc.com, api.psy-1.com, snailsleep.net, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, mp.weixin.qq.com, www.zhihu.com, api.zhihu.com, link.zhihu.com, 118.89.204.198, api.bilibili.com, api.live.bilibili.com, *.amemv.com, aweme*.snssdk.com, *.xiaoxiao*.com, p.du.163.com, getuserinfo.321mh.com, getuserinfo-globalapi.zymk.cn, newdrugs.dxy.cn, biz.caiyunapp.com, api.gotokeep.com, api.gamer.com.tw
+hostname = %APPEND% greasyfork.org, openuserjs.org, trade-acs.m.taobao.com, api.m.jd.com, ios.prod.ftl.netflix.com, vipapi.jxedt.com, api.interpreter.caiyunai.com, book.haitunwallet.com, api.rr.tv, api.diyidan.net, api.flexibits.com, note.youdao.com, api.shimo.im, *.bjxkhc.com, api.psy-1.com, snailsleep.net, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, mp.weixin.qq.com, 118.89.204.198, *.amemv.com, aweme*.snssdk.com, *.xiaoxiao*.com, p.du.163.com, getuserinfo.321mh.com, getuserinfo-globalapi.zymk.cn, newdrugs.dxy.cn, biz.caiyunapp.com, api.gotokeep.com, api.gamer.com.tw
