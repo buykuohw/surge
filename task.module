@@ -5,14 +5,6 @@
 # https://github.com/nzw9314/Surge/blob/master/Module/Task_All_in_one.sgmodule
 
 [Script]
-# > 疫情日报 (By Peng-YM)
-疫情日报 = script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/nCov.js,type=cron,cronexp=0 0 8 * * *
-
-# > 电视节目预告 (By @Macsuny)
-# var c = “cctv1”
-# 常用卫视代码北京: btv1 | 湖南: hunan | 浙江: zhejiang|河南: henan| 江苏: jiangsu|广东: guangdong
-电视节目预告 = type=cron,cronexp=0 0 8 * * *,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/tvpreview.js,script-update-interval=0
-
 # > 百度签到
 #先登录,浏览器访问一下: https://tieba.baidu.com 或者 https://tieba.baidu.com/index/
 百度签到(网页) = type=cron,cronexp="10 0 0 * * *",script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.js,script-update-interval=0
@@ -25,9 +17,6 @@
 # > 哔哩哔哩大会员特权领取
 哔哩哔哩大会员特权领取 = type=cron,cronexp=0 1 0 1 *,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bilibili/privilegeReceive.js
 
-# > 切换会话
-切换会话 = type=cron,cronexp="0 12 * * *",script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/switcher/box.switcher.js,wake-system=true
-
 # > 机场签到 (by evilbutcher & Neurogram )
 # 使用BoxJs配置订阅及密码
 机场签到 = type=cron,cronexp=type=cron,cronexp=0 10 0 * * *,script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/checkin_env.js
@@ -39,6 +28,6 @@
 
 # > 滴滴出行 (By @zZPiglet)
 # 进入"滴滴出行"，若弹出"首次写入滴滴出行 Token 成功"
-滴滴出行 = type=cron,cronexp=0 6 0 * * *,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi.js
+滴滴出行 = type=cron,cronexp=0 6 0 * * *,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js
 滴滴出行2 = type=cron,cronexp=0 59 23 * * *,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_reward.js
 
