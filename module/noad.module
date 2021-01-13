@@ -2,6 +2,9 @@
 #!desc= some rewrite
 #!system=ios
 
+[Script]
+微信公众号 = script-path=https://Choler.github.io/Surge/Script/WeChat.js,type=http-request,pattern=^https://mp\.weixin\.qq\.com/mp/getappmsgad
+
 [URL Rewrite]
 ^http:\/\/.+?\.pglstatp\-toutiao\.com\/img\/ad\.union\.api\/ - reject
 ^http:\/\/.+?\.pglstatp\-toutiao\.com\/img\/web\.business\.image\/ - reject
