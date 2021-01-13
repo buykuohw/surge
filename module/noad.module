@@ -1,0 +1,11 @@
+#!name= ZhiHu
+#!desc= Remove ZhiHu Ads (ZhiHu Version:6.45.0)
+#!system=ios
+
+[URL Rewrite]
+^http:\/\/.+?\.pglstatp\-toutiao\.com\/img\/ad\.union\.api\/ - reject
+^http:\/\/.+?\.pglstatp\-toutiao\.com\/img\/web\.business\.image\/ - reject
+^https?:\/\/mp\.weixin\.qq\.com\/(s|mp)\/(ad_|advertisement|getappmsgad|report|appmsgreport|appmsgpicreport) - reject
+
+[MITM]
+hostname = %APPEND% pglstatp-toutiao.com, mp.weixin.qq.com 
